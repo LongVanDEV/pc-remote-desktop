@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Hosting</title>
+<style>
+  :root {
+    --bg: #0b0f14;
+    --panel: #121821;
+    --text: #e6edf3;
+    --muted: #7d8b99;
+    --host: #3ba7a0;
+    --accent: #7c8cf8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex; flex-direction: column; align-items: center; padding: 40px 24px; gap: 18px;
+  }
+  h2 { margin: 0; font-weight: 600; font-size: 18px; color: var(--muted); }
+  .name-row { display: flex; gap: 8px; align-items: center; }
+  #nameInput {
+    font-size: 18px; font-weight: 600; background: var(--panel); border: 1px solid #1f2733;
+    color: var(--host); padding: 10px 16px; border-radius: 8px; text-align: center; width: 240px;
+  }
+  #saveNameBtn {
+    background: var(--panel); border: 1px solid #1f2733; color: var(--muted);
+    padding: 10px 14px; border-radius: 8px; cursor: pointer;
+  }
+  #status { color: var(--muted); font-size: 14px; text-align: center; min-height: 18px; }
+  .invite-box {
+    background: var(--panel); border: 1px solid #1f2733; border-radius: 10px;
+    padding: 16px 20px; width: 300px; text-align: center;
+  }
+  .invite-box .label { font-size: 13px; color: var(--muted); }
+  .invite-box button {
+    background: var(--accent); color: #10132a; font-weight: 600; padding: 10px 18px;
+    border-radius: 8px; border: none; cursor: pointer; font-size: 13px;
+  }
+  #inviteCode {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 24px;
+    letter-spacing: 6px; margin: 10px 0; color: var(--accent); min-height: 30px;
+  }
+  .settings-box {
+    background: var(--panel); border: 1px solid #1f2733; border-radius: 10px;
+    padding: 14px 16px; width: min(520px, 100%);
+  }
+  .settings-row { display: flex; gap: 8px; align-items: center; margin-bottom: 9px; }
+  .settings-row:last-child { margin-bottom: 0; }
+  .settings-row label { width: 90px; color: var(--muted); font-size: 12px; }
+  .settings-row select {
+    flex: 1; background: #0b0f14; border: 1px solid #1f2733; color: var(--text);
+    padding: 8px 10px; border-radius: 7px; font-family: inherit; font-size: 12px;
+  }
+  #saveCaptureBtn, #clearHistoryBtn {
+    background: #1f2733; color: var(--text); padding: 8px 12px; border-radius: 7px; border: none; cursor: pointer;
+    font-size: 12px;
+  }
+  .history-head { width: 320px; display: flex; align-items: center; justify-content: space-between; }
+  .history-head span { color: var(--muted); font-size: 12px; }
+  #log { width: 320px; font-size: 12px; color: var(--muted); max-height: 160px; overflow-y: auto; }
+  #log div { padding: 3px 0; border-bottom: 1px solid #1a212b; }
+</style>
+</head>
+<body>
+  <h2>Hosting</h2>
+  <div class="name-row">
+    <input id="nameInput" />
+    <button id="saveNameBtn">Save</button>
+  </div>
+  <p id="status">Starting…</p>
+  <div class="settings-box">
+    <div class="settings-row">
+      <label for="monitorSelect">Display</label>
+      <select id="monitorSelect"></select>
+    </div>
+    <div class="settings-row">
+      <label for="qualitySelect">Quality</label>
+      <select id="qualitySelect"></select>
+    </div>
+    <div style="text-align:right;">
+      <button id="saveCaptureBtn">Save capture settings</button>
+    </div>
+  </div>
+  <div class="invite-box">
+    <div class="label">Share access with another Google account</div>
+    <div id="inviteCode">—</div>
+    <button id="inviteBtn">Generate invite code</button>
+  </div>
+  <div class="history-head"><span>Connection history (saved locally)</span><button id="clearHistoryBtn">Clear</button></div>
+  <div id="log"></div>
+  <script src="host.js"></script>
+</body>
+</html>
