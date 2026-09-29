@@ -1,0 +1,9 @@
+{
+  "name": "pc-remote-desktop",
+  "version": "0.0.0-public-decoy",
+  "private": true,
+  "description": "Public placeholder repository",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
