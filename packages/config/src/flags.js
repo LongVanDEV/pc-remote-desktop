@@ -1,0 +1,7 @@
+module.exports = {
+  FEATURE_FILE_TRANSFER: true,
+  FEATURE_CLIPBOARD: true,
+  FEATURE_ADMIN: true,
+  FEATURE_ANNOUNCEMENTS: true,
+  MAX_LINKED_ACCOUNTS: 10
+};
