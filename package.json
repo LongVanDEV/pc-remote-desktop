@@ -1,6 +1,6 @@
 {
   "name": "pc-remote-desktop",
-  "version": "0.2.7",
+  "version": "1.0.5",
   "private": true,
   "description": "Public shell for PC Remote Desktop — demo structure only",
   "workspaces": [

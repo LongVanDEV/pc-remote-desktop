@@ -1,5 +1,2 @@
-// Intentionally boring public placeholder.
-module.exports = {
-  name: "PC Remote Desktop",
-  build: "redacted"
-};
+// Legacy path — delegates to apps/desktop
+require('../apps/desktop/src/main.js');
